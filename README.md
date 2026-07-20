@@ -40,7 +40,7 @@ To falsify-test this explanation, the simulation is rerun with the absorption pr
 - **Regression for inference**: extracting a physical rate constant and its standard error from log-transformed data, including an explicit discussion of heteroscedastic residuals and why an unweighted fit is acceptable here
 - **Uncertainty quantification**: binomial standard errors and 95% confidence bands on every simulated point, used to establish that the theory-simulation gap is systematic rather than sampling noise
 - **Grounded parameters**: all physical inputs derived from the NIST XCOM database rather than assumed
-- **Honest scoping**: the model's simplifications (1D geometry, energy-independent cross sections) are stated up front, and Appendix III outlines how each could be relaxed
+- **Honest scoping**: the model's simplifications (1D geometry, energy-independent cross sections) are stated up front, and Appendix II outlines how each could be relaxed
 
 ## Tools
 
@@ -50,11 +50,11 @@ Python (NumPy, pandas, SciPy, Matplotlib), Jupyter. No external simulation libra
 
 | File | Description |
 |---|---|
-| `Random_Walk.ipynb` | The full analysis: theory, simulation, regression, falsification test, plus Appendix I (deriving μ and the absorption probability from NIST XCOM) and Appendix III (relaxing the model's simplifications) |
+| `Random_Walk.ipynb` | The full analysis: theory, simulation, regression, falsification test, plus Appendix I (deriving μ and the absorption probability from NIST XCOM) and Appendix II (relaxing the model's simplifications) |
 | `theory_vs_simulation.png` | Headline figure: simulated leak fraction vs. the Beer-Lambert prediction on a log scale |
 | `README.md` | This document |
 
-GitHub's notebook renderer can time out on larger notebooks. If the notebook fails to render in the browser, view it through [nbviewer](https://nbviewer.org/github/robertwcellucci/radiation-shielding-monte-carlo/main/Random_Walk.ipynb).
+GitHub's notebook renderer can time out on larger notebooks. If the notebook fails to render in the browser, view it through [nbviewer](https://nbviewer.org/github/robertwcellucci/radiation-shielding-monte-carlo/blob/main/Random_Walk.ipynb).
 
 ## Running the Notebook
 
@@ -63,7 +63,7 @@ pip install numpy pandas scipy matplotlib jupyter
 jupyter notebook Random_Walk.ipynb
 ```
 
-Run all cells top to bottom. The random seed is fixed (seed=42), but the generator's state advances with every cell that draws random numbers, so exact reproduction requires a fresh top-to-bottom run. The main million-photon sweep takes less than 1 minute on a typical laptop.
+Run all cells top to bottom. The random seed is fixed (seed=42), but the generator's state advances with every cell that draws random numbers, so exact reproduction requires a fresh top-to-bottom run. The main million-photon sweep takes about 76 seconds on a typical laptop.
 
 ## Limitations and Extensions
 
