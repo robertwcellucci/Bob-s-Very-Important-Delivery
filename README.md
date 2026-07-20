@@ -1,5 +1,5 @@
-# Bob-s-Very-Important-Delivery
-A Monte Carlo Random Walk for a Radiation Shielding Problem
+# When the Textbook Formula is Wrong
+A Monte Carlo random walk for a radiation shielding problem, and the 58% gap between theory and simulation
 
 **The question:** How much lead shielding is needed so that no more than 0.1% of gamma photons from a Caesium-137 source escape?
 
@@ -45,6 +45,16 @@ To falsify-test this explanation, the simulation is rerun with the absorption pr
 ## Tools
 
 Python (NumPy, pandas, SciPy, Matplotlib), Jupyter. No external simulation libraries; the Monte Carlo engine is built from scratch.
+
+## Repository Contents
+
+| File | Description |
+|---|---|
+| `Random_Walk.ipynb` | The full analysis: theory, simulation, regression, falsification test, plus Appendix I (deriving μ and the absorption probability from NIST XCOM) and Appendix III (relaxing the model's simplifications) |
+| `theory_vs_simulation.png` | Headline figure: simulated leak fraction vs. the Beer-Lambert prediction on a log scale |
+| `README.md` | This document |
+
+GitHub's notebook renderer can time out on larger notebooks. If the notebook fails to render in the browser, view it through [nbviewer](https://nbviewer.org/github/robertwcellucci/radiation-shielding-monte-carlo/main/Random_Walk.ipynb).
 
 ## Running the Notebook
 
